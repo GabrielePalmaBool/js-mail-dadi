@@ -70,7 +70,7 @@ function Fsearch(val1) {
 
            //Condizione necessaria per inserire l'elemento all'interno del mio array (se anche l'ultimo elemento della mia lista è diverso e sono sicuro di aver confrontato ogni altro elemento prima)
             if (num == mails.length){
-                
+
                 //Creo l'elemento all'interno del mio file html
                 const stringa = document.createElement ("p");
 
@@ -84,6 +84,8 @@ function Fsearch(val1) {
                 mails.push(mailU);
 
                 console.log (mails);
+
+                return (0);
                 
               }
         }
@@ -98,6 +100,8 @@ function Fsearch(val1) {
 
              //inserisco stringa all'interno del mio contenitore "none"
              risultato.append(stringa);
+
+             return (0);
             
         }
 
