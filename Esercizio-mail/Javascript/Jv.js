@@ -14,7 +14,7 @@ const search = document.getElementById("calcolo");
 const delButton = document.getElementById("cencella");
 
 // acquisisco l'elemento che ha per classe risultato, dove andrò ad inserire il risultato
-const risultato = document.querySelector(".pippo");
+const risultato = document.querySelector(".string");
 
 console.log (userMail);
 
@@ -43,3 +43,33 @@ delButton.addEventListener("click",
 
 );
 
+// Funzione per ricerca/inserimetno in un array della mail utente
+function Fsearch(val1) {
+
+    let mailU = val1;
+
+    console.log (mailU);
+
+    for (let i = 0; i<=mails.length; i++) {
+            
+        let xMail = mails[i];
+        
+        if (mailU == xMail){
+
+            document.getElementById("none").style="display:block"; 
+
+            //Creo l'elemento all'interno del mio file html
+            const stringa = document.createElement ("p");
+
+            //inserisco scritta all'interno del mio contenuto
+            stringa.append("Sei dei nostri, puoi procedere!");
+
+            //inserisco stringa all'interno del mio contenitore "none"
+            risultato.append(stringa);
+        }
+
+
+    }
+
+
+}
