@@ -4,3 +4,16 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* box */
+.Box {
+    width: 100%;
+    background-color: lightgray;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 50px 0px 50px 0px;
+ }
+ 
+ #none {
+     display: none;
+ }
