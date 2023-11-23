@@ -76,7 +76,7 @@ function Fsearch(val1) {
 
         else {
              //Creo l'elemento all'interno del mio file html
-                const stringa = document.createElement ("p");
+             const stringa = document.createElement ("p");
 
              //inserisco scritta all'interno del mio contenuto
              stringa.append("Sei dei nostri, puoi procedere!");
