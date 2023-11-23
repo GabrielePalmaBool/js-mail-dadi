@@ -17,6 +17,8 @@ const delButton = document.getElementById("cencella");
 const risultato = document.querySelector(".string");
 
 
+
+
 const mails = ["pippo", "j", "hj", "gj"]
 
 // Quando viene cliccato il pulsante invia
@@ -40,6 +42,10 @@ delButton.addEventListener("click",
 
         document.getElementById("none").style="display:none"; 
 
+        //inserisco scritta all'interno del mio contenuto
+        risultato.removeChild(risultato.lastChild);
+
+
     }
 
 );
@@ -49,13 +55,11 @@ function Fsearch(val1) {
 
     let mailU = val1;
 
-    
+    // inizializzo una variabile ("contatore") a zero
+    let num = 0;
 
     for (let i = 0; i < mails.length; i++) {
             
-        // inizializzo una variabile ("contatore") a zero
-        let num = 0;
-        
         //acquisisco il valore ("stringa") nella prima posizione della mia stringa
         let xMail= mails[i];
        
@@ -68,47 +72,42 @@ function Fsearch(val1) {
            //aggiorno il valore ogni volta che controllo il valore e risulta diverso 
            num = i +1;
 
-           //Condizione necessaria per inserire l'elemento all'interno del mio array (se anche l'ultimo elemento della mia lista è diverso e sono sicuro di aver confrontato ogni altro elemento prima)
-            if (num == mails.length){
-
-                //Creo l'elemento all'interno del mio file html
-                const stringa = document.createElement ("p");
-
-                //inserisco scritta all'interno del mio contenuto
-                stringa.append("la mail non è presente nell'archivio, procedo all'inserimento!.......riprovare");
-
-                //inserisco stringa all'interno del mio contenitore "none"
-                risultato.append(stringa);
-            
-                // Inserisco l'elemento in fondo al mio array 
-                mails.push(mailU);
-
-                console.log (mails);
-
-                return (0);
-                
-              }
         }
 
         else {
-
-            //Creo l'elemento all'interno del mio file html
-             const stringa = document.createElement ("p");
+             //Creo l'elemento all'interno del mio file html
+                const stringa = document.createElement ("p");
 
              //inserisco scritta all'interno del mio contenuto
              stringa.append("Sei dei nostri, puoi procedere!");
 
              //inserisco stringa all'interno del mio contenitore "none"
              risultato.append(stringa);
-
-             return (0);
             
         }
 
-        
-
        
     }
+
+     //Condizione necessaria per inserire l'elemento all'interno del mio array (se anche l'ultimo elemento della mia lista è diverso e sono sicuro di aver confrontato ogni altro elemento prima)
+     if (num == mails.length){
+
+         //Creo l'elemento all'interno del mio file html
+        const stringa = document.createElement ("p");
+
+        //inserisco scritta all'interno del mio contenuto
+        stringa.append("la mail non è presente nell'archivio, procedo all'inserimento!.......riprovare");
+
+        //inserisco stringa all'interno del mio contenitore "none"
+        risultato.append(stringa);
+    
+        // Inserisco l'elemento in fondo al mio array 
+        mails.push(mailU);
+
+        console.log (mails);
+        
+    }
+
 
 
 }
