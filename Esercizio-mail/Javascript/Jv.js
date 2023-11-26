@@ -10,14 +10,8 @@ const userMail = document.querySelector(".Umail");
 // acquisisco l'elemento (bottone) che ha per id calcolo,
 const search = document.getElementById("calcolo");
 
-// acquisisco l'elemento (bottone) che ha per id cencella,
-const delButton = document.getElementById("cencella");
-
 // acquisisco l'elemento che ha per classe risultato, dove andrò ad inserire il risultato
 const risultato = document.querySelector(".string");
-
-
-
 
 const mails = ["pippo", "j", "hj", "gj"]
 
@@ -30,24 +24,10 @@ search.addEventListener("click",
 
         document.getElementById("none").style="display:block"; 
 
+        Fcontrol ();
+
         Fsearch(val1);
     }
-);
-
-
-// Quando viene cliccato il pulsante annulla
-delButton.addEventListener("click",
-
-    function() {
-
-        document.getElementById("none").style="display:none"; 
-
-        //inserisco scritta all'interno del mio contenuto
-        risultato.removeChild(risultato.lastChild);
-
-
-    }
-
 );
 
 // Funzione per ricerca/inserimetno in un array della mail utente
@@ -63,14 +43,11 @@ function Fsearch(val1) {
         //acquisisco il valore ("stringa") nella prima posizione della mia stringa
         let xMail= mails[i];
        
-        console.log (mailU);
-        console.log (xMail);
-
         //confronto i valori e in caso risultino diversi
         if (mailU != xMail){
 
            //aggiorno il valore ogni volta che controllo il valore e risulta diverso 
-           num = i +1;
+           num = num +1;
 
         }
 
@@ -83,7 +60,7 @@ function Fsearch(val1) {
 
              //inserisco stringa all'interno del mio contenitore "none"
              risultato.append(stringa);
-            
+
         }
 
        
@@ -109,5 +86,24 @@ function Fsearch(val1) {
     }
 
 
+
+}
+
+
+//Funzione di controllo sul documento html 
+
+function Fcontrol() {
+
+    //acquisisco i valore nel tag p(qualora ci fosse all'interno della classe string)
+    const number = document.querySelector('.string p');
+    
+    //se è stato stampato in pagina qualcosa precedentemente
+    if (number != null){
+
+        //elimino scritta all'interno del mio contenuto
+        risultato.removeChild(risultato.lastChild);
+    }
+
+    
 
 }
